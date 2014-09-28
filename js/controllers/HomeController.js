@@ -5,15 +5,15 @@ angular.module('openjar.controllers').controller('HomeController', ['$animate', 
     //first set of ingredients
 		$timeout(function() {
 			$rootScope.inventory.push('butter');
-		}, 500);
+		}, 1000);
 		
 		$timeout(function() {
 			$rootScope.inventory.push('milk');
-		}, 1200);
+		}, 1800);
 		
 		$timeout(function() {
 			$rootScope.inventory.push('eggs');
-		}, 2000);
+		}, 2600);
 
 		$scope.search = function() {
 			var recipes = [];
