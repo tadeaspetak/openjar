@@ -30,7 +30,13 @@ angular.module('openjar', [
 	])
 	.run(['$rootScope', '$location', '$anchorScroll', function($rootScope, $location, $anchorScroll) {
 			//$rootScope.inventory = ['parsley', 'lemons', 'kale', 'Jerusalem artichoke', 'Veal', 'maccheroni', 'carrots', 'pizza dough', 'Potato', 'Cress', 'Gouda cheese', 'red peppers', 'salat', 'flatfish', 'bacon', 'tomatoes', 'yogurt', 'zucchini'];
-			$rootScope.inventory = [{text: 'broccoli', expires: true}, {text: 'cheddar', expires: true}];
+			$rootScope.inventory = [
+				{text: 'broccoli', expires: true},
+				{text: 'cheddar', expires: true},
+				{text: 'butter'},
+				{text: 'milk'},
+				{text: 'eggs'}
+			];
 			$rootScope.required = [];
 			$rootScope.common = [
 				{text: 'flour'},

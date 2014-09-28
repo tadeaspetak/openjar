@@ -3,7 +3,7 @@ angular.module('openjar.controllers').controller('HomeController', ['$animate', 
 	function($animate, $rootScope, $timeout, $scope, Recipes) {
 
 		//first set of ingredients
-		$timeout(function() {
+		/*$timeout(function() {
 			$rootScope.inventory.push({text: 'butter'});
 		}, 1000);
 
@@ -13,7 +13,18 @@ angular.module('openjar.controllers').controller('HomeController', ['$animate', 
 
 		$timeout(function() {
 			$rootScope.inventory.push({text: 'eggs'});
-		}, 2600);
+		}, 2600);*/
+		
+		$timeout(function(){
+			$rootScope.inventory.push({text: 'parsley'});
+			$rootScope.inventory.push({text: 'lemons'});
+			$rootScope.inventory.push({text: 'kale'});
+			$rootScope.inventory.push({text: 'Jerusalem artichoke'});
+			$rootScope.inventory.push({text: 'Veal'});
+			$rootScope.inventory.push({text: 'maccheroni'});
+			$rootScope.inventory.push({text: 'carrots'});
+			//'', '', '', '', '', '', '', 'pizza dough', 'Potato', 'Cress', 'Gouda cheese', 'red peppers', 'salat', 'flatfish', 'bacon', 'tomatoes', 'yogurt', 'zucchini'
+		}, 1000);
 
 		$scope.search = function() {
 			var recipes = [];
