@@ -20,6 +20,7 @@ angular.module('openjar.controllers').controller('HomeController', ['$animate', 
 
 			$rootScope.inventory.forEach(function(ingredient) {
 				ingredient = ingredient.text;
+				console.log(ingredient);
 				$rootScope.getFromCache(ingredient, Recipes.get, function(result) {
 					for (var i in result['matches']) {
 						var recipe = result['matches'][i];
@@ -48,7 +49,17 @@ angular.module('openjar.controllers').controller('HomeController', ['$animate', 
 						//go through ingredients and increase score if there is a match in the shopping list
 						for (var j in recipe.ingredients) {
 							var ingredient = recipe.ingredients[j];
-							if ($rootScope.inventory.concat($rootScope.common).indexOf(ingredient) > -1) {
+
+							var all = $rootScope.inventory.concat($rootScope.common);
+							var doWeHaveIt = false;
+							for (var a in all) {
+								if (all[a].text == ingredient) {
+									doWeHaveIt = true;
+									break;
+								}
+							}
+
+							if (doWeHaveIt) {
 								recipe.score++;
 								recipe.have.push(ingredient);
 							}
