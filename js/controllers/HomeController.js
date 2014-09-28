@@ -12,7 +12,7 @@ angular.module('openjar.controllers').controller('HomeController', ['$animate', 
 		}, 1200);
 		
 		$timeout(function() {
-			$rootScope.inventory.push('egs');
+			$rootScope.inventory.push('eggs');
 		}, 2000);
 
 		$scope.search = function() {
