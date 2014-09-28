@@ -35,9 +35,11 @@ angular.module('openjar.controllers').controller('HomeController', ['$animate', 
 						else {
 							goOn = false;
 						}
+						
+						
 
 						for (var a in $rootScope.required) {
-							if (recipe.ingredients.indexOf($rootScope.required[a]) < 0) {
+							if (recipe.ingredients.indexOf($rootScope.required[a].text) < 0) {
 								goOn = false;
 								break;
 							}
