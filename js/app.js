@@ -30,9 +30,13 @@ angular.module('openjar', [
 	])
 	.run(['$rootScope', '$location', '$anchorScroll', function($rootScope, $location, $anchorScroll) {
 			//$rootScope.inventory = ['parsley', 'lemons', 'kale', 'Jerusalem artichoke', 'Veal', 'maccheroni', 'carrots', 'pizza dough', 'Potato', 'Cress', 'Gouda cheese', 'red peppers', 'salat', 'flatfish', 'bacon', 'tomatoes', 'yogurt', 'zucchini'];
-			$rootScope.inventory = ['broccoli', 'cheddar'];
+			$rootScope.inventory = [{text: 'broccoli', expires: true}, {text: 'cheddar', expires: true}];
 			$rootScope.required = [];
-			$rootScope.common = ['flour', 'salt', 'water', 'sugar'];
+			$rootScope.common = [
+				{text: 'flour'},
+				{text: 'salt'},
+				{text: 'water'},
+				{text: 'sugar'}];
 
 			$rootScope.getFromCache = function(item, call, done) {
 				var result = localStorage.getItem(item);

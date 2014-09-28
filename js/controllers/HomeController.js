@@ -2,23 +2,24 @@
 angular.module('openjar.controllers').controller('HomeController', ['$animate', '$rootScope', '$timeout', '$scope', 'Recipes',
 	function($animate, $rootScope, $timeout, $scope, Recipes) {
 
-    //first set of ingredients
+		//first set of ingredients
 		$timeout(function() {
-			$rootScope.inventory.push('butter');
+			$rootScope.inventory.push({text: 'butter'});
 		}, 1000);
-		
+
 		$timeout(function() {
-			$rootScope.inventory.push('milk');
+			$rootScope.inventory.push({text: 'milk'});
 		}, 1800);
-		
+
 		$timeout(function() {
-			$rootScope.inventory.push('eggs');
+			$rootScope.inventory.push({text: 'eggs'});
 		}, 2600);
 
 		$scope.search = function() {
 			var recipes = [];
 
 			$rootScope.inventory.forEach(function(ingredient) {
+				ingredient = ingredient.text;
 				$rootScope.getFromCache(ingredient, Recipes.get, function(result) {
 					for (var i in result['matches']) {
 						var recipe = result['matches'][i];

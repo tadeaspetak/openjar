@@ -8,7 +8,8 @@
 		<div class="inventory">
 			<h3>Inventory</h3>
 			<ul ui-fade-toggle="visible">
-				<li class="inventory-item" ng-repeat="item in inventory" ng-swipe-left="inventoryLeft(item, $event)" ng-swipe-right="inventoryRight(item, $event)">{{item}}</li>
+				<li ng-class="{'inventory-item': true, expires: item.expires}" ng-repeat="item in inventory" ng-swipe-left="inventoryLeft(item, $event)" ng-swipe-right="inventoryRight(item, $event)">{{item.text}}
+					<span class="expires" ng-if="item.expires">(Expires soon)</span></li>
 			</ul>
 			<input class="hideOnShoppingList" data-action="addInventory" placeholder="Add product" />
 		</div>
