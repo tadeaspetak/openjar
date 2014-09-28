@@ -24,7 +24,7 @@ angular.module('openjar.controllers').controller('HomeController', ['$animate', 
 			$rootScope.inventory.push({text: 'maccheroni'});
 			$rootScope.inventory.push({text: 'carrots'});
 			//'', '', '', '', '', '', '', 'pizza dough', 'Potato', 'Cress', 'Gouda cheese', 'red peppers', 'salat', 'flatfish', 'bacon', 'tomatoes', 'yogurt', 'zucchini'
-		}, 1000);
+		}, 4000);
 
 		$scope.search = function() {
 			var recipes = [];
