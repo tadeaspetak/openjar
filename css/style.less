@@ -1,0 +1,285 @@
+@import "reset.css";
+
+@fontBody: 'Raleway', sans-serif;
+@fontHeaders: 'Raleway', sans-serif;
+
+@colorBg: #303039;
+@colorFont: #f7f7f7;
+
+.capitals {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+.mini { font-size: 0.7rem; }
+.text-muted { color: darken(@colorFont, 50%) }
+.text-ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+}
+
+body {
+  background:@colorBg;
+  font-family: @fontBody;
+  color: @colorFont;
+  line-height: 1.4rem;
+  &.with-sidebar-left {
+    padding-left: 238px;
+  }
+  position: relative;
+}
+h1, h2 {
+  font-family: @fontHeaders;
+  line-height: 1em;
+}
+h1 {
+  font-size: 5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 100;
+}
+h2 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 200;
+  .capitals;
+}
+h3 {
+  font-size: 0.8rem;
+  font-weight: 900;
+  margin-bottom: 4px;
+  .capitals;
+}
+
+.btn {
+  background: @colorFont;
+  color: @colorBg;
+  padding: 0.2rem 0.2rem 0.2rem 0.4rem;
+  border-radius: 2px;
+  font-size: 0.6rem;
+  line-height: 1.1em;
+  .capitals;
+  cursor: pointer;
+}
+.back-btn {
+  position: absolute;
+  top: -20px;
+  left: 250px;
+}
+
+.sidebar{
+  background: rgba(0,0,0,0.2);
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &.sidebar-left {
+    width: 238px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+  }
+
+  .user-info {
+    background: rgba(0,0,0,0.3);
+    padding: 10px 20px;
+    margin-bottom: 0px;
+  }
+
+  .inventory, .shoppingList {
+    padding: 10px 10px 20px 10px;
+    ul {
+      margin: 10px 0;
+      li {
+        padding: 5px 10px;
+				position:relative;
+				border-radius:3px;
+
+				-webkit-transition:padding ease-out .2s;
+				transition:padding ease-out .2s;
+				
+				-webkit-transition:background-color ease-out .2s;
+				transition:background-color ease-out .2s;
+				
+
+				/*&.ng-move,
+				&.ng-enter,
+				&.ng-leave {
+					-webkit-transition:left cubic-bezier(1,-0.6,.63,1.89) 1s;
+					transition:left cubic-bezier(1,-0.6,.63,1.89) 1s;
+				}
+
+				&.ng-leave.ng-leave-active,
+				&.ng-move,
+				&.ng-enter {
+					-webkit-transition:left cubic-bezier(1,-0.6,.63,1.89) 1s;
+					transition:left cubic-bezier(1,-0.6,.63,1.89) 1s;
+					left: -150px;
+				}
+
+				&.ng-leave,
+				&.ng-move.ng-move-active,
+				&.ng-enter.ng-enter-active {
+					left:0;
+				} */
+				
+				&.moved{
+					background-color:#333;
+				}
+
+        &.selected {
+          padding-left: 30px;
+          background: fade(@colorBg, 90%);
+        }
+        &::before {
+          content: '';
+          display: inline-block;
+          border: 1px solid rgba(255,255,255,0.2);
+          width: 0.7rem;
+          height: 0.7rem;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+    input {
+      background: rgba(255,255,255,0.3);
+      border: none;
+      padding: 5px 10px;
+      box-sizing: border-box;
+      max-width: 100%;
+      border-radius: 4px;
+      &:focus {
+        background: rgba(255,255,255,0.7);
+      }
+    }
+  }
+
+  .shoppingList {
+    background: rgba(0,0,0,0.2);
+    transition: transform 0.3s 0.2s;
+  }
+  &.showShoppingList .shoppingList {
+    /*transform: translate3d(0px, 0%, 0px);*/
+  }
+  &.showShoppingList .hideOnShoppingList {
+    display: none;
+  }
+}
+.content {
+  max-width: 768px;
+  margin: 30px auto 120px;
+  .left {
+    width: 30%;
+    float: left;
+    padding: 0px 0.5rem;
+  }
+  .right {
+    width: 70%;
+    float: left;
+    padding: 0px 0.5rem;
+  }
+}
+.clear {
+  width: 100%;
+  display: block;
+  clear: both;
+}
+
+img.img-responsive {
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.footer {
+  text-align: center;
+  margin: 50px 0;
+  .capitals;
+  font-size: 0.8rem;
+  .heart {
+    color: pink;
+    font-size: 2em;
+    vertical-align: -0.2em;
+  }
+}
+
+// Frontpage
+
+#sugestions {
+
+  max-width: 768px;
+  position: relative;
+
+  li {
+    width: 31%;
+    height: 200px;
+    float: left;
+    margin: 1%;
+    border-radius: 3px;
+    overflow: hidden;
+
+    background-size: cover;
+    position: relative;
+
+    .box {
+      background: rgba(0,0,0,0.7);
+      padding: 10px;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+    }
+  }
+
+  &::after {
+    display: block;
+    content: '';
+    clear: both;
+  }
+
+}
+
+// Recepie
+
+/*.recipe {
+  display: none;
+}*/
+
+.instructions {
+  max-width: 480px;
+  margin: 0px auto;
+}
+
+.list {
+  background: @colorFont;
+  color: @colorBg;
+  padding: 10px;
+  border-radius: 4px;
+  h3 {
+    .text-muted;
+  }
+  ul {
+    margin-bottom: 20px;
+    li {
+      padding: 5px 0px;
+      &::before {
+        content: '';
+        display: inline-block;
+        border: 1px solid rgba(0,0,0,0.2);
+        width: 0.7rem;
+        height: 0.7rem;
+        margin-right: 0.5rem;
+      }
+      &:hover::before {
+        content: '\00D7';
+        border: 0px;
+        font-size: 2rem;
+        line-height: 0.1em;
+        vertical-align: -0.2rem;
+        color: pink;
+        cursor: pointer;
+      }
+    }
+  }
+}

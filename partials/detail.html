@@ -1,0 +1,36 @@
+<body class="with-sidebar-left">
+
+	<div class="sidebar sidebar-left">
+		<div class="user-info">
+			<div class="pull-right mini text-muted">Log out</div>
+			<i class="fa fa-user"></i> Alfred Beckman
+		</div>
+		<div class="inventory">
+			<h3>You got</h3>
+			<ul>
+				<li class="inventory-item" ng-repeat="item in recipeOverview.have" ng-swipe-left="youGotLeft(item, $event)" ng-swipe-right="youGotRight(item, $event)" ng-click="youGotLeft(item, $event)">{{item}}</li>
+			</ul>
+		</div>
+		<div class="shoppingList">
+			<h3>You need</h3>
+			<ul>
+				<li class="shoppingList-item" ng-repeat="item in recipeOverview.dontHave" ng-swipe-left="youNeedLeft(item, $event)" ng-swipe-right="youNeedRight(item, $event)" ng-click="youNeedLeft(item, $event)">{{item}}</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="content">
+		<div class="recipe">
+      <div class="btn back-btn" data-action="back" ui-sref="home">&laquo; Back</div>
+      <h1>{{recipe.name}}</h1>
+
+      <div class="instructions">
+        <img src="http://farm6.staticflickr.com/5279/6947892324_031f68a311.jpg" class="img-responsive" />
+				<ul>
+					<li ng-repeat="line in recipe.ingredientLines">{{line}}</li>
+				</ul>
+      </div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div class="footer">About Open Jar | Copyright &copy; 2014 | We <span class="heart">&hearts;</span> Food</div>

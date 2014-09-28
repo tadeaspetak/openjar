@@ -1,0 +1,35 @@
+<body class="with-sidebar-left">
+
+	<div class="sidebar sidebar-left">
+		<div class="user-info">
+			<div class="pull-right mini text-muted">Log out</div>
+			<i class="fa fa-user"></i> Alfred Beckman
+		</div>
+		<div class="inventory">
+			<h3>Inventory</h3>
+			<ul ui-fade-toggle="visible">
+				<li class="inventory-item" ng-repeat="item in inventory" ng-swipe-left="inventoryLeft(item, $event)" ng-swipe-right="inventoryRight(item, $event)">{{item}}</li>
+			</ul>
+			<input class="hideOnShoppingList" data-action="addInventory" placeholder="Add product" />
+		</div>
+	</div>
+
+	<div class="content">
+
+		<div class="frontPage">
+      <h1>Open Jar</h1>
+      <h2>Here is some stuff you could make</h2>
+      <ul id="sugestions">
+				<li ng-repeat="recipe in recipes" style="background-image: url('{{recipe.image}}')" ui-sref="detail({id: recipe.id})">
+					<div class="box">
+            <h3>{{recipe.recipeName}}</h3>
+            <p class="mini text-ellipsis">You need <strong>{{recipe.dontHave}}</strong></p>
+          </div>
+				</li>
+      </ul>
+    </div>
+	</div>
+
+	<div class="clear"></div>
+
+	<div class="footer">About Open Jar | Copyright &copy; 2014 | We <span class="heart">&hearts;</span> Food</div>
