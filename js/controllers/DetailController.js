@@ -5,6 +5,7 @@ angular.module('openjar.controllers').controller('DetailController', ['$rootScop
 
 		$rootScope.getFromCache(id, Recipes.getDetail, function(recipe) {
 			$scope.recipe = recipe;
+			console.log($scope.recipe);
 
 			for (var i in $rootScope.recipes) {
 				if ($rootScope.recipes[i].id == id) {

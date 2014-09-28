@@ -17,19 +17,25 @@
 				<li class="shoppingList-item" ng-repeat="item in recipeOverview.dontHave" ng-swipe-left="youNeedLeft(item, $event)" ng-swipe-right="youNeedRight(item, $event)" ng-click="youNeedLeft(item, $event)">{{item}}</li>
 			</ul>
 		</div>
+		<div class="shopping-list-container">
+			<a class="btn add-to-shopping-list">To shopping list</a>
+		</div>
 	</div>
 
-	<div class="content">
+	<div class="content detail">
 		<div class="recipe">
       <div class="btn back-btn" data-action="back" ui-sref="home">&laquo; Back</div>
       <h1>{{recipe.name}}</h1>
 
       <div class="instructions">
-        <img src="http://farm6.staticflickr.com/5279/6947892324_031f68a311.jpg" class="img-responsive" />
+        <img ng-src="{{recipe.images[0].hostedLargeUrl}}" class="img-responsive" />
 				<ul>
 					<li ng-repeat="line in recipe.ingredientLines">{{line}}</li>
 				</ul>
       </div>
+
+			<a class="btn directions" href="{{recipe.source.sourceRecipeUrl}}">Get the directions</a>
+
 		</div>
 	</div>
 	<div class="clear"></div>

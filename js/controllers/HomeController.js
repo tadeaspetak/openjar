@@ -2,6 +2,7 @@
 angular.module('openjar.controllers').controller('HomeController', ['$animate', '$rootScope', '$timeout', '$scope', 'Recipes',
 	function($animate, $rootScope, $timeout, $scope, Recipes) {
 
+    //first set of ingredients
 		$timeout(function() {
 			$rootScope.inventory.push('butter');
 		}, 500);
