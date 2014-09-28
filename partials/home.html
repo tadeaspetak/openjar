@@ -17,8 +17,10 @@
 	<div class="content">
 
 		<div class="frontPage">
-      <h1>Open Jar</h1>
-      <h2>Here is some stuff you could make</h2>
+			<div class="logo-container">
+				<img src="open-jar-logo-white.png" alt="Logo" />
+			</div>
+      <h2>Here is some delicious stuff you could make with what you got</h2>
       <ul id="sugestions">
 				<li ng-repeat="recipe in recipes" style="background-image: url('{{recipe.image}}')" ui-sref="detail({id: recipe.id})">
 					<div class="box">
