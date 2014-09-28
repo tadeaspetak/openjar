@@ -31,7 +31,6 @@ angular.module('openjar.controllers').controller('HomeController', ['$animate', 
 
 			$rootScope.inventory.forEach(function(ingredient) {
 				ingredient = ingredient.text;
-				console.log(ingredient);
 				$rootScope.getFromCache(ingredient, Recipes.get, function(result) {
 					for (var i in result['matches']) {
 						var recipe = result['matches'][i];
