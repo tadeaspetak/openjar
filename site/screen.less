@@ -1,0 +1,209 @@
+@import "reset.css";
+
+@fontBody: 'Raleway', sans-serif;
+@fontHeaders: 'Raleway', sans-serif;
+
+@colorBg: #303039;
+@colorFont: rgba(28,28,28,.9);;
+
+body {
+  background:white;
+  font-family: @fontBody;
+  color: @colorFont;
+  line-height: 1.5rem;
+	font-size:18px;
+  &.with-sidebar-left {
+    padding-left: 238px;
+  }
+  position: relative;
+}
+
+.clearfix{
+  zoom:1;
+  &:before, &:after{ content:""; display:table; }
+  &:after{ clear: both; }
+}
+
+h1,h2,h3,p,ul{
+	margin-bottom:1em;
+}
+
+.container ul{
+	text-align:left;
+	list-style-type:disc;
+}
+
+.column{
+	display:inline-block;
+}
+
+#promo{
+	margin:2em 0;
+}
+
+.modal{
+	h4{
+		font-weight:bold;
+	}
+	a{
+		color:@colorFont;
+	}
+	a:hover{
+		text-decoration:none;
+	}
+}
+
+a{
+	text-decoration:underline;
+	color:white;
+}
+
+a.btn{
+	text-decoration:none;
+}
+
+nav{
+	.clearfix;
+	margin:0 auto 40px;
+	padding:50px 0 100px;
+	background:url(logo.png) 48% 20% no-repeat;
+	background-size: 150px 150px;
+	ul{
+		list-style-type:none !important;
+		display: table;
+		width:100%;
+		li{
+			display: table-cell;
+			text-align:center;
+			&.before-logo{
+				padding-right:50px;
+			}
+			&.after-logo{
+				padding-left:50px;
+			}
+			a{
+				text-transform: uppercase;
+				letter-spacing: 2px;
+				font-size:14px;
+				text-decoration:none;
+				font-weight:bold;
+				&:hover{
+					color:#FF9D57;
+					text-decoration:none;
+				}
+			}
+		}
+	}
+	ul:after {
+		content: '';
+		width: 100%; /* Ensures there are at least 2 lines of text, so justification works */
+		display: inline-block;
+	}
+}
+
+.bold{
+	font-weight:bold;
+}
+
+img{
+	margin-bottom:2em;
+}
+.member img{
+	margin-bottom:0px;
+}
+.member p{
+	margin-bottom:2em;
+}
+
+h1{
+	font-size:30px;
+}
+
+h1.huge{
+	font-size:50px;
+	margin-bottom:20px;
+}
+
+.container{
+	max-width:960px;
+}
+
+
+
+h2{
+	color: rgb(255, 122, 56);
+	font-size:32px;
+}
+
+.centered{
+	text-align:center;
+}
+
+.centered img{
+	margin-left:auto;
+	margin-right:auto;
+}
+
+h1{
+	text-align:center;
+}
+
+header{
+	.clearfix;
+	background-image: url(fridge.jpg);
+	background-size: cover;
+	background-position: 50% 50%;
+	margin-bottom:2em;
+}
+
+header .wrapper{
+	background: rgba(0, 0, 0, 0.7);
+
+	color:white;
+	padding:20px 0 50px;
+}
+
+
+.carrots{
+	.clearfix;
+	background-image: url(carrots.jpg);
+	background-size: cover;
+	background-position: 50% 50%;
+}
+
+.carrots .wrapper{
+	background: rgba(0, 0, 0, 0.7);
+
+	color:white;
+	padding:70px 0 50px;
+}
+
+
+.waste{
+	.clearfix;
+	background-image: url(waste.jpg);
+	background-size: cover;
+	background-position: 50% 50%;
+	margin-bottom:2em;
+}
+
+.waste .wrapper{
+	background: rgba(0, 0, 0, 0.7);
+
+	color:white;
+	padding:70px 0 50px;
+}
+
+footer{
+	.clearfix;
+	background-image: url(team.jpg);
+	background-size: cover;
+	background-position: 50% 50%;
+}
+
+footer .wrapper {
+	background: rgba(0, 0, 0, 0.7);
+
+	color:white;
+	padding:150px 0;
+}
